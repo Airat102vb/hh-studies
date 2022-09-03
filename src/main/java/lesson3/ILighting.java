@@ -1,8 +1,8 @@
 package lesson3;
 
-public interface ILighting {
+public interface ILighting<T> {
 
-  void turnOnLights();
+  void turnOnLights(T color);
 
   void turnOffLights();
 }

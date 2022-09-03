@@ -6,9 +6,11 @@ public class Car extends AbstractVehicle implements IMovable, ILighting{
     type = "Car";
   }
 
-  private static String model;
+  private String model;
   private int speed = 0;
   private static final short MAX_SPEED = 450;
+  private boolean isStarted = false;
+  private boolean isWantToStop = false;
 
   Car(String model) {
     this.model = model;
@@ -43,8 +45,8 @@ public class Car extends AbstractVehicle implements IMovable, ILighting{
   }
 
   @Override
-  public void turnOnLights() {
-    System.out.println("Headlights on");
+  public void turnOnLights(Object color) {
+    System.out.println("Headlights on with " + color);
   }
 
   @Override
@@ -53,8 +55,8 @@ public class Car extends AbstractVehicle implements IMovable, ILighting{
   }
 
   @Override
-  public void startMove() {
-    System.out.println(type + " is moving");
+  public void startMove(Object thing) {
+    System.out.println(type + thing);
   }
 
   public void increaseSpeed (int speed) {
@@ -65,5 +67,21 @@ public class Car extends AbstractVehicle implements IMovable, ILighting{
       System.out.println(getModel() + " accelerates to " + speed + " km/h");
       this.speed = speed;
     }
+  }
+
+  protected boolean isStarted() {
+    return isStarted;
+  }
+
+  protected void setStarted(boolean isStarted) {
+    this.isStarted = isStarted;
+  }
+
+  public boolean isWantToStop() {
+    return this.isWantToStop;
+  }
+
+  public void setWantToStop(boolean wantToStop) {
+    this.isWantToStop = wantToStop;
   }
 }
