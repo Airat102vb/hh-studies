@@ -1,3 +1,5 @@
+package lesson3;
+
 public class Helicopter extends AbstractVehicle implements ILighting, IMovable{
 
   {

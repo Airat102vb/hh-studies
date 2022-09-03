@@ -1,3 +1,5 @@
+package lesson3;
+
 public class Car extends AbstractVehicle implements IMovable, ILighting{
 
   {

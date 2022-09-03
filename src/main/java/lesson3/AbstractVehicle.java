@@ -1,3 +1,5 @@
+package lesson3;
+
 public abstract class AbstractVehicle {
 
   protected String type;
