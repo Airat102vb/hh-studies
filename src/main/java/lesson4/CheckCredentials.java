@@ -1,6 +1,8 @@
+package lesson4;
+
 import java.util.Scanner;
 
-public class Main {
+public class CheckCredentials {
 
   /**
    * 1. Создать статический метод который принимает на вход три параметра: login, password и confirmPassword.
