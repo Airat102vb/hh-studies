@@ -33,10 +33,10 @@ public class Helicopter extends AbstractVehicle implements ILighting, IMovable{
   @Override
   public void stop() {
     if (!isStarted()) {
-      System.out.println(type + " " + getModel() + " is already stopped");
+      System.out.println(type + " " + getModel() + " not in the air");
     } else {
-      System.out.println(type + " " + getModel() + " is stopping");
-      System.out.println(type + " " + getModel() + " is stopped");
+      System.out.println(type + " " + getModel() + " altitude reduction");
+      System.out.println(type + " " + getModel() + " landed");
     }
   }
 
@@ -64,6 +64,4 @@ public class Helicopter extends AbstractVehicle implements ILighting, IMovable{
       this.height = height;
     }
   }
-
-
 }
