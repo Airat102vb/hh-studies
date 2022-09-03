@@ -25,12 +25,15 @@ public class CheckPosition {
     System.out.println("Введите координату Y искомой точки:");
     anyPoint[1] = scanner.nextInt();
 
+    checkPosition(anyPoint, center, radius);
+  }
 
+  private static boolean checkPosition(int[] anyPoint, int[] center, int radius) {
     if ((anyPoint[0] > center[0] - radius && anyPoint[0] < center[0] + radius) &&
         (anyPoint[1] > center[1] - radius && anyPoint[1] < center[1] + radius)) {
-      System.out.println(true);
+      return true;
     } else {
-      System.out.println(false);
+      return false;
     }
   }
 }

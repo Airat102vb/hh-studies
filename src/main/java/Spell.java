@@ -11,25 +11,15 @@ public class Spell {
 
   public static void main(String[] args) {
 
-    int natural = new Scanner(System.in).nextInt();
+    rec(new Scanner(System.in).nextInt(), 0);
+  }
 
-    int divider = 10;
-    boolean maxDivider = false;
-    while (!maxDivider) {
-      if (natural / divider == 0) {
-        maxDivider = true;
-        divider /= 10;
-      } else {
-        divider *= 10;
-      }
+  private static void rec(int n, int from) {
+    if (n == from) {
+      System.out.println(n);
+      return;
     }
-
-    while (divider != 1) {
-      int number = natural / divider;
-      System.out.println(number);
-      natural -= number * divider;
-      divider /= 10;
-    }
-    System.out.println(natural);
+    System.out.println(from);
+    rec(n, from + 1);
   }
 }
