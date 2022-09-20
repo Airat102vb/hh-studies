@@ -6,9 +6,11 @@ public class Helicopter extends AbstractVehicle implements ILighting, IMovable{
     type = "Helicopter";
   }
 
-  private static String model;
+  private String model;
   private int height = 0;
   private static final short MAX_HEIGHT = 30;
+  private boolean isStarted = false;
+  private boolean isWantToStop = false;
 
   Helicopter(String model) {
     this.model = model;
@@ -43,8 +45,8 @@ public class Helicopter extends AbstractVehicle implements ILighting, IMovable{
   }
 
   @Override
-  public void turnOnLights() {
-    System.out.println("Spotlight on");
+  public void turnOnLights(Object color) {
+    System.out.println("Spotlight on with " + color);
   }
 
   @Override
@@ -53,8 +55,8 @@ public class Helicopter extends AbstractVehicle implements ILighting, IMovable{
   }
 
   @Override
-  public void startMove() {
-    System.out.println(type + "is gaining altitude");
+  public void startMove(Object thing) {
+    System.out.println(type + "is gaining altitude" + thing);
   }
 
   public void increaseHeight (int height) {
@@ -65,5 +67,21 @@ public class Helicopter extends AbstractVehicle implements ILighting, IMovable{
       System.out.println(getModel() + " accelerates to " + height + " km");
       this.height = height;
     }
+  }
+
+  protected boolean isStarted() {
+    return isStarted;
+  }
+
+  protected void setStarted(boolean isStarted) {
+    this.isStarted = isStarted;
+  }
+
+  public boolean isWantToStop() {
+    return this.isWantToStop;
+  }
+
+  public void setWantToStop(boolean wantToStop) {
+    this.isWantToStop = wantToStop;
   }
 }

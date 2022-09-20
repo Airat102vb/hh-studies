@@ -1,6 +1,6 @@
 package lesson3;
 
-public interface IMovable {
+public interface IMovable<T> {
 
-  void startMove();
+  void startMove(T thing);
 }
